@@ -18,5 +18,6 @@ install:
   - easy_install --upgrade six
   - sudo easy_install --upgrade six
   - pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
+  - ls /home/travis/miniconda/envs/test-environment/lib/python2.7/site-packages/
 # command to run tests
 script: py.test
