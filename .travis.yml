@@ -12,7 +12,7 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  - conda create -q -n test-environment numpy
+  - conda create -q -n test-environment numpy pytest
   - source activate test-environment
   - easy_install --upgrade six
   - which python
