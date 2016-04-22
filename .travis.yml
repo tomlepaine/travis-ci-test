@@ -3,6 +3,7 @@ dist: trusty
 language: python
 python:
   - "2.7"
+
 install:
   - wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
@@ -12,14 +13,10 @@ install:
   - conda update -q conda
   # Useful for debugging any issues with conda
   - conda info -a
-  - conda create -q -n test-environment numpy pytest
+  - conda create -q -n test-environment pytest
   - source activate test-environment
   - easy_install --upgrade six
-  - which python
-  - which py.test
-  - echo $PYTHONPATH
   - pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
 
-  - ls /home/travis/miniconda/envs/test-environment/lib/python2.7/site-packages/
 # command to run tests
 script: py.test
