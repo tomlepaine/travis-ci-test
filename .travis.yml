@@ -12,8 +12,11 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
 
+  - echo $TRAVIS_PYTHON_VERSION
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION numpy
   - source activate test-environment
+  - easy_install --upgrade six
+  - sudo easy_install --upgrade six
   - pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp27-none-linux_x86_64.whl
 # command to run tests
 script: py.test
